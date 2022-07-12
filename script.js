@@ -3,6 +3,7 @@ const View = (() => {
   const domstr = {
     contactContainer: "#contactsList_container",
     submitBtn: ".btn",
+    searchBox: ".search"
   };
 
   const render = (ele, tmp) => {
@@ -30,7 +31,6 @@ const View = (() => {
 })();
 
 /* Model */
-// const Model = ((api, view) => {
   const Model = ((view) => {
 
   class Contact {
@@ -58,16 +58,11 @@ const View = (() => {
     }
   }
 
-  // const { getContacts, addContact } = api;
-
   return {
-    // getContacts,
-    // addContact,
     Contact,
     State,
   };
 })(View);
-// })(Api, View);
 
 
 /* Controller */
@@ -90,19 +85,14 @@ const Controller = ((model, view) => {
       console.log(state.contactList);
 
       // clear the input box
-      // name.value = '';
-      // mobile.value = '';
-      // email.value = '';
+      name.value = '';
+      mobile.value = '';
+      email.value = '';
      
     })
   }
 
   const init = () => state.contactList.reverse();
-  // {
-  //   // model.getContacts().then(contacts => {
-  //     // state.contactList = [...contacts.reverse()];
-  //   // })
-  // }
 
   const bootstrap = () => {
     init();
